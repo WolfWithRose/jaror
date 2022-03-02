@@ -1,0 +1,7 @@
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\bin\Debug\jaror.exe.config
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\bin\Debug\jaror.exe
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\bin\Debug\jaror.pdb
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\obj\Debug\jaror.csprojAssemblyReference.cache
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\obj\Debug\jaror.csproj.CoreCompileInputs.cache
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\obj\Debug\jaror.exe
+D:\Kussa Richárd\Érettségi\Közúti ellenőrzés\jaror\jaror\jaror\obj\Debug\jaror.pdb
