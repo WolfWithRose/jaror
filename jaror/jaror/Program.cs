@@ -16,7 +16,7 @@ namespace jaror
             public int sec;
             public DateTime dt;
             public string betuk;
-            public int szamok;
+            public string szamok;
         }
         static void Main(string[] args)
         {
@@ -32,7 +32,7 @@ namespace jaror
                 a.dt = new DateTime(1, 1, 1, int.Parse(s[0]), int.Parse(s[1]), int.Parse(s[2]));
                 string[] sz = s[3].Split('-');
                 a.betuk = sz[0];
-                a.szamok = int.Parse(sz[1]);
+                a.szamok = sz[1];
                 lista.Add(a);
             }
 
@@ -41,8 +41,29 @@ namespace jaror
             Console.WriteLine("3. feladat:");
             for (int i = lista.First().dt.Hour; i < lista.Last().dt.Hour + 1; i++)
             {
-                Console.WriteLine($"{i} óra: {lista.First(x => x.dt.Hour == i).betuk}-{lista.First(x => x.dt.Hour == i).szamok}");
+                if (lista.Count(x => x.dt.Hour == i) > 0)
+                {
+                    Console.WriteLine($"{i} óra: {lista.First(x => x.dt.Hour == i).betuk}-{lista.First(x => x.dt.Hour == i).szamok}");
+                }                
             }
+            Console.WriteLine("4. feladat:");
+            Console.WriteLine($"{lista.Count(x => x.betuk[0] == 'B')} darab busz, ");
+            Console.WriteLine($"{lista.Count(x => x.betuk[0] == 'K')} darab kamion, ");
+            Console.WriteLine($"{lista.Count(x => x.betuk[0] == 'M')} darab motor, ");
+            Console.WriteLine($"és {lista.Count(x => x.betuk[0] != 'B' && x.betuk[0] != 'K' && x.betuk[0] != 'M')} darab személygépkocsi haladt el az ellenőrző pont előtt.");
+            Console.WriteLine("5. feladat:");
+            TimeSpan max = new TimeSpan();
+            int index = -1;
+            for (int i = 0; i < lista.Count()-2; i++)
+            {
+                if (max < lista[i+1].dt - lista[i].dt)
+                {
+                    max = lista[i + 1].dt - lista[i].dt;
+                    index = i;
+                }
+            }
+            Console.WriteLine($"{lista[index].dt.Hour}:{lista[index].dt.Minute}:{lista[index].dt.Second} - {lista[index+1].dt.Hour}:{lista[index+1].dt.Minute}:{lista[index+1].dt.Second}");
+            Console.WriteLine();
         }
     }
 }
